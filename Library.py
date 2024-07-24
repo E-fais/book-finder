@@ -14,10 +14,11 @@ from PIL import Image,ImageTk
 
 def get_book():
     query = entry.get()
-    info_label.config(text=f'Searching for {query}...')
     if query == '':
         messagebox.showwarning('No input', 'Please type a book name')
         return
+    else:
+         info_label.config(text=f'Searching for {query}...')
 
     BASE_URL = f"https://openlibrary.org/search.json?q={query}"
     try:
